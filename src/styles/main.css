@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+:root{
+  --utama: #1A4D2E;
+  --kedua: #4F6F52;
+  --foot:  #1E1E1E;
+  --hover: #FFC700;
+  --tag:   #FFF455;
+  
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+/* skip link */
+.link-fokus{
+  position: absolute;
+  top: -550px;
+  left: 0;
+  background-color: var(--hover);
+  color: black;
+  padding: 10px;
+  z-index: 10000;
+}
+
+.link-fokus:focus{
+  top: 0px;
+}
+
+/* navbar */
+nav{
+  font-weight: 200;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: var(--utama);
+  position: fixed;
+  z-index: 999;
+}
+
+.hamburger{
+  display: none;
+}
+.hamburger button{
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  border: none;
+  transition: 0.5s;
+}
+.hamburger button:hover{
+  cursor: pointer;
+  color: var(--hover);
+}
+.nav-logo{
+font-size: 3em;
+color: white;
+}
+nav ul li a{
+  display: inline-block;
+  min-height: 44px;
+  padding: 1rem;
+  min-width: 44px;
+  color: white;
+}
+nav ul{
+  display: flex;
+  gap: 2rem;
+  font-size: 24px;
+  list-style: none;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  background-color: var(--hover);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: ease-in-out .2s;
+}
+nav ul li a::after{
+  display: block;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+a:focus{
+  outline: 3px solid black;
+  padding: 2px;
+  border-radius: 5px;
+}
+button:focus{
+  outline: 3px solid black;
+  padding: 2px;
+  border-radius: 5px;
+}
+main{
+  padding-top: 3rem;
+}
+/* jumbotron */
+.Hero{
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  width: 100%;
+  text-align: center;
+  background-image: url('../public/images/heros/hero-image_4.jpg');
+  background-position: 41% 80%;
+  filter: brightness();
+}
+
+.HeroIn{
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.judul-hero{
+  color: white;
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.tagline-hero{
+  color: white;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/* list resto */
+.tempat-makan{
+  color: var(--utama);
+  padding: 4rem;
+  text-align: center;
+}
+.list-tempat{
+  display: grid;
+  padding-top: 2rem;
+  gap: 1rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit,minmax(400px,1fr));;
+}
+
+.judulResto:focus{
+  outline: 4px solid black;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.list-tempat .judulResto{
+  height: 460px;
+  width: 380px;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 20px;
+  color: white;
+  background: rgb(26,77,46);
+  background: linear-gradient(0deg, rgba(26,77,46,1) 0%, rgba(79,111,82,1) 31%, rgba(255,255,255,1) 82%);
+  box-shadow: 0px 2px 5px black;
+}
+
+.list-tempat .judulResto .gambarResto img{
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+}
+.list-tempat .judulResto .gambarResto p{
+  position: absolute;
+  background-color: var(--utama);
+  padding: 5px 10px;
+  border-radius: 10px 0;
+}
+.list-tempat .judulResto .deskripsiResto p{
+  text-align: left;
+  padding-top: 0.2rem;
+  font-weight: 200;
+}
+
+.list-tempat .judulResto .deskripsiResto .ratedesc{
+  font-weight: 700;
+  font-style: italic;
+}
+
+.list-tempat .judulResto .deskripsiResto .juduldesc{
+  font-weight: 400;
+}
+
+footer{
+  display: flex;
+  font-weight: 200;
+  padding: 0.5rem;
+  font-size: 24px;
+  background-color: var(--foot);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Untuk Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 75%;
+  }
+
+  nav .judul-hero {
+    font-size: 2.38rem;
+  }
+
+  nav ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    right: -100%;
+    background-color: var(--utama);
+    width: 20rem;
+    height: 100vh;
+    transition: 0.5s;
+  }
+
+  nav .hamburger {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  nav .active {
+    right: 0;
+  }
+
+  nav ul li a:hover{
+    background-color: var(--hover);
+    border-radius: 8px;
+    padding: 6px;
+    transition: ease-in-out .2s;
+  }
+  nav ul li a {
+    display: block;
+    padding: 1rem;
+    margin: 0.5rem;
+    font-size: 20px;
+  }
+
+  .list-tempat .judulResto .deskripsiResto p{
+    font-size: 15px;
+  }
+  
+  .hero {
+    height: auto; 
+    min-height: 280px; 
+  }
+}
+
+/* Untuk Smarthphone */
+@media (max-width: 456px) {
+  html {
+    font-size: 50%;
+  }
+}
