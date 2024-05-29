@@ -1,0 +1,123 @@
+/* Untuk Tablet */
+@media (max-width: 768px) {
+    html {
+      font-size: 75%;
+    }
+  
+    nav .judul-hero {
+      font-size: 2.38rem;
+    }
+  
+    nav ul {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 100%;
+      right: -100%;
+      background-color: var(--utama);
+      width: 20rem;
+      height: 100vh;
+      transition: 0.5s;
+    }
+  
+    nav .hamburger {
+      display: inline-block;
+      cursor: pointer;
+    }
+  
+    .appbar .active {
+      right: 0;
+    }
+  
+    nav ul li a:hover{
+      background-color: var(--hover);
+      border-radius: 8px;
+      padding: 6px;
+      transition: ease-in-out .2s;
+    }
+    nav ul li a {
+      display: block;
+      padding: 1rem;
+      margin: 0.5rem;
+      font-size: 20px;
+    }
+  
+    .list-tempat .judulResto .deskripsiResto p{
+      font-size: 15px;
+    }
+    
+    .hero {
+      height: auto; 
+      min-height: 280px; 
+      background-image: url('../public/images/heros/hero-image_4-large.jpg');
+    }
+
+    /* detail */
+    .menu .makanan{
+      text-align: center;
+      width: auto;
+      height: auto;
+    }
+    
+    .menu .minuman{
+      text-align: center;
+      height: auto;
+      width: auto;
+    }
+
+  }
+  
+  /* Untuk Smarthphone */
+  @media (max-width: 456px) {
+    /* html {
+      font-size: 40%;
+    } */
+    .detail-info{
+      text-align: center;
+      justify-content: center;
+    }
+    .list-tempat .judulResto .deskripsiResto p{
+      font-size: 10px;
+    }
+    
+    .list-tempat .judulResto .deskripsiResto a{
+      padding: 2rem;
+      min-height: 44px;
+      min-width: 44px;
+      font-size: 15px;
+    }
+    /* detail */
+    .menu {
+      text-align: center;
+      width: auto;
+      padding-top: 0;
+      margin: 0;
+    }
+    .Hero{
+      background-image: url('../public/images/heros/hero-image_4-medium.jpg');
+    }
+
+    .detail-header img{
+      height: 100px;
+    }
+
+  }
+
+  @media (max-width: 320px) {
+
+      .list-tempat .judulResto .gambarResto img{
+        height: auto;
+        min-height: 100px;
+      }
+
+      .list-tempat .judulResto .deskripsiResto a{
+        padding: 1rem;
+        min-height: 44px;
+        min-width: 44px;
+        font-size: 15px;
+      }
+      .Hero {
+        background-image: url('../public/images/heros/hero-image_4-small.jpg');
+      }
+  }
+

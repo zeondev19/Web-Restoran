@@ -18,9 +18,8 @@
 
 body{
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: black;
 }
-
 /* skip link */
 .link-fokus{
   position: absolute;
@@ -44,8 +43,8 @@ nav{
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background-color: var(--utama);
   position: fixed;
+  background-color: var(--utama);
   z-index: 999;
 }
 
@@ -54,8 +53,8 @@ nav{
 }
 .hamburger button{
   box-sizing: border-box;
-  width: 44px;
-  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border: none;
   transition: 0.5s;
 }
@@ -64,6 +63,8 @@ nav{
   color: var(--hover);
 }
 .nav-logo{
+min-width: 44px;
+min-height: 44px;
 font-size: 3em;
 color: white;
 }
@@ -87,11 +88,6 @@ nav ul li a:hover{
   border-radius: 8px;
   padding: 1rem;
   transition: ease-in-out .2s;
-}
-nav ul li a::after{
-  display: block;
-  transform: scaleX(0);
-  transition: 0.2s linear;
 }
 
 a:focus{
@@ -148,7 +144,7 @@ main{
   padding-top: 2rem;
   gap: 1rem;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit,minmax(400px,1fr));;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));;
 }
 
 .judulResto:focus{
@@ -158,8 +154,8 @@ main{
 }
 
 .list-tempat .judulResto{
-  height: 460px;
-  width: 380px;
+  height: auto;
+  width: auto;
   padding: 1rem;
   margin: 1rem;
   border-radius: 20px;
@@ -170,7 +166,7 @@ main{
 }
 
 .list-tempat .judulResto .gambarResto img{
-  height: 200px;
+  min-height: 200px;
   width: 100%;
   border-radius: 10px;
 }
@@ -184,6 +180,12 @@ main{
   text-align: left;
   padding-top: 0.2rem;
   font-weight: 200;
+}
+.list-tempat .judulResto .deskripsiResto a{
+  padding: 1rem;
+  min-height: 44px;
+  min-width: 44px;
+  font-size: 15px;
 }
 
 .list-tempat .judulResto .deskripsiResto .ratedesc{
@@ -200,69 +202,115 @@ footer{
   font-weight: 200;
   padding: 0.5rem;
   font-size: 24px;
+  color: white;
   background-color: var(--foot);
   text-align: center;
   align-items: center;
   justify-content: center;
 }
 
-/* Untuk Tablet */
-@media (max-width: 768px) {
-  html {
-    font-size: 75%;
-  }
-
-  nav .judul-hero {
-    font-size: 2.38rem;
-  }
-
-  nav ul {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 100%;
-    right: -100%;
-    background-color: var(--utama);
-    width: 20rem;
-    height: 100vh;
-    transition: 0.5s;
-  }
-
-  nav .hamburger {
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  nav .active {
-    right: 0;
-  }
-
-  nav ul li a:hover{
-    background-color: var(--hover);
-    border-radius: 8px;
-    padding: 6px;
-    transition: ease-in-out .2s;
-  }
-  nav ul li a {
-    display: block;
-    padding: 1rem;
-    margin: 0.5rem;
-    font-size: 20px;
-  }
-
-  .list-tempat .judulResto .deskripsiResto p{
-    font-size: 15px;
-  }
+/* tombol like */
+.like {
+  width: 55px;
+  height: 55px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
   
-  .hero {
-    height: auto; 
-    min-height: 280px; 
-  }
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }
 
-/* Untuk Smarthphone */
-@media (max-width: 456px) {
-  html {
-    font-size: 50%;
-  }
+/* detail resto */
+
+.detail-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.restoran-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  min-height: 300px;
+  margin-bottom: 1rem;
+  border: 2px solid var(--hvr);
+  border-radius: 50px;
+}
+
+.restoran-detail{
+  display: grid;
+}
+.detail-description{
+  background-color: rgb(171, 200, 183);;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 2rem 0 2rem 0;
+}
+
+.judul-review{
+  display: grid;
+  padding-top: 2rem;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));;
+}
+
+.ulasan-item .review-item_bold{
+  height: 200px;
+  width: 200px;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 20px;
+  color: black;
+  background: rgb(26,77,46);
+  background: linear-gradient(0deg, rgba(26,77,46,1) 0%, rgba(255,255,255,1) 31%, rgba(79,111,82,1) 82%);
+  box-shadow: 0px 2px 5px black;
+}
+
+.menu{
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));;
+}
+
+.menu .makanan{
+  text-align: center;
+  height: 500px;
+  width: 400px;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 20px;
+  color: black;
+  background: rgb(171, 200, 183);
+  box-shadow: 0px 2px 5px black;
+}
+
+.menu .minuman{
+  text-align: center;
+  height: 500px;
+  width: 400px;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 20px;
+  color: black;
+  background: rgb(171, 200, 183);
+  box-shadow: 0px 2px 5px black;
+}
+
+.deskripsiResto a {
+  color: white;
 }
