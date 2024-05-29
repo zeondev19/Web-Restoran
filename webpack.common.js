@@ -1,11 +1,13 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const path = require('path');
+ 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
+    // sw: path.resolve(__dirname, 'src/scripts/utils/sw-register.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -28,8 +30,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
-
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -42,5 +42,26 @@ module.exports = {
         },
       ],
     }),
+    new CleanWebpackPlugin(),
+    
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+      skipWaiting: true,
+      clientsClaim: true,
+      runtimeCaching: [
+        {
+          // eslint-disable-next-line prefer-regex-literals
+          urlPattern: new RegExp('https://restaurant-api.dicoding.dev/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'new Date().toISOString()',
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
+          },
+        },
+      ],
+    }),
+
   ],
 };
