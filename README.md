@@ -1,5 +1,4 @@
-Sure! Here's a sample README.md content for your GitHub repository in English:
-
+#Dicoding Assignment Tengku Bintang Zaky Irmaysa- F15
 ---
 
 # Restaurant Web Application
@@ -72,7 +71,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-If you have any questions or feedback, feel free to contact me at [your.email@example.com](mailto:your.email@example.com).
+If you have any questions or feedback, feel free to contact me at [your.email@example.com](mailto:zeondev19@@example.com).
 
 ---
 
