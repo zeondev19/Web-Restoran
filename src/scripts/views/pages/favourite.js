@@ -16,6 +16,7 @@ const FavouriteRestoran = {
     const restoran = await FavoriteRestoranIdb.getAllRestoran();
     const restoranContainer = document.querySelector('#tempat-list');
 
+<<<<<<< HEAD
     if (restoran.length === 0) {
       restoranContainer.innerHTML = '<p >Daftar Masih Kosong</p>';
     } else {
@@ -23,6 +24,11 @@ const FavouriteRestoran = {
         restoranContainer.innerHTML += createListRestoranTemplate(data);
       });
     }
+=======
+    restoran.forEach((data) => {
+      restoranContainer.innerHTML += createListRestoranTemplate(data);
+    });
+>>>>>>> ec89dbb281ad28a969e211f4efd93ba022d3ea61
   },
 };
 

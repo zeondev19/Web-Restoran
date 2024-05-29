@@ -11,21 +11,27 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
 
 const FavoriteRestoranIdb = {
   async getRestoran(id) {
+<<<<<<< HEAD
     if (!id) {
       return;
     }
     // eslint-disable-next-line consistent-return
+=======
+>>>>>>> ec89dbb281ad28a969e211f4efd93ba022d3ea61
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
   async getAllRestoran() {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
   async putRestoran(restoran) {
+<<<<<<< HEAD
     // eslint-disable-next-line no-prototype-builtins
     if (!restoran.hasOwnProperty('id')) {
       return;
     }
     // eslint-disable-next-line consistent-return
+=======
+>>>>>>> ec89dbb281ad28a969e211f4efd93ba022d3ea61
     return (await dbPromise).put(OBJECT_STORE_NAME, restoran);
   },
   async deleteRestoran(id) {

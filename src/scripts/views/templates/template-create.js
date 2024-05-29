@@ -4,7 +4,11 @@ const createListRestoranTemplate = (restoran) => `
         <div class="judulResto" >
         <div class="gambarResto">
             <p><i>${restoran.city}</i></p>
+<<<<<<< HEAD
             <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restoran.pictureId}" alt="${restoran.name}">
+=======
+            <img src="${restoran.pictureId ? CONFIG.BASE_IMAGE_URL + restoran.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restoran.name}">
+>>>>>>> ec89dbb281ad28a969e211f4efd93ba022d3ea61
         </div>
         <div class="deskripsiResto">
         <p class="juduldesc">${restoran.name}</p>
@@ -67,13 +71,21 @@ const createRestoranDetailTemplate = (restoran) => `
 `;
 
 const createLikeButtonTemplate = () => `
+<<<<<<< HEAD
   <button aria-label="like this restoran" id="likeButton" class="like">
+=======
+  <button aria-label="like this movie" id="likeButton" class="like">
+>>>>>>> ec89dbb281ad28a969e211f4efd93ba022d3ea61
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
+<<<<<<< HEAD
   <button aria-label="unlike this restoran" id="likeButton" class="like">
+=======
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+>>>>>>> ec89dbb281ad28a969e211f4efd93ba022d3ea61
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;

@@ -2,11 +2,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+<<<<<<< HEAD
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
+=======
+const path = require('path');
+ 
+>>>>>>> ec89dbb281ad28a969e211f4efd93ba022d3ea61
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -69,6 +74,7 @@ module.exports = {
       ],
     }),
     new CleanWebpackPlugin(),
+<<<<<<< HEAD
     new BundleAnalyzerPlugin(),
     new ImageminWebpackPlugin({
       plugins: [
@@ -79,6 +85,9 @@ module.exports = {
       ],
     }),
 
+=======
+    
+>>>>>>> ec89dbb281ad28a969e211f4efd93ba022d3ea61
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
       skipWaiting: true,
